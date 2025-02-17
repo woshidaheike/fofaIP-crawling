@@ -1,0 +1,4 @@
+selenium==4.28.1
+beautifulsoup4==4.13.3
+bs4==0.0.2
+webdriver-manager==4.0.2
