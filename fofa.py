@@ -32,7 +32,7 @@ fofa_search=input("请输入你的fofa语句：")
 # 创建 ChromeOptions 对象
 chrome_options = Options()
 
-chrome_options.add_argument("--user-data-dir=C:\\Users\\32419\\AppData\\Local\\Google\\Chrome\\User Data")
+chrome_options.add_argument("--user-data-dir=C:\\Users\\(用户名)\\AppData\\Local\\Google\\Chrome\\User Data")
 chrome_options.add_experimental_option("debuggerAddress","127.0.0.1:9222")
 
 service = Service(ChromeDriverManager().install())
