@@ -66,6 +66,8 @@ https://fofa.info/result?qbase64=YXBwPSJteXNxbCI%3D&page=5&page_size=10
 
 其实每一页的url没啥变化就是page后面的参数变量所以只要每次访问的url变化就可以实现更多的ip资产但是我没钱你懂的
 
+##### 如果有人借我会员我可以更加完善哦
+
 ### 最后
  
  看到这个项目的应该都是学安全的 有群希望大佬来指导
