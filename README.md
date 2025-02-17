@@ -37,6 +37,8 @@ chrome_options.add_experimental_option("debuggerAddress","127.0.0.1:端口")
 
 ### 5.运行程序
 
+cmd的管理员模式：
+
 (1) python fofa.py
 
 (2) 请输入fofa语句：
