@@ -1,5 +1,7 @@
 import os
+from getpass import win_getpass
 from traceback import format_exc
+from Demos.BackupSeek_streamheaders import bytes_moved
 from selenium import webdriver
 from selenium.webdriver import Keys
 from webdriver_manager.chrome import ChromeDriverManager
@@ -9,7 +11,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import bs4
-
+import time
 def write(ip_list):
     with open("ip_list.txt", "w") as f:
         for i in ip_list:
@@ -28,7 +30,7 @@ def find(html):
     print("ip添加成功")
 ip_list = []
 fofa_search=input("请输入你的fofa语句：")
-
+levels=int(input("请输入你要重复的次数："))
 # 创建 ChromeOptions 对象
 chrome_options = Options()
 
@@ -38,15 +40,17 @@ chrome_options.add_experimental_option("debuggerAddress","127.0.0.1:9222")
 service = Service(ChromeDriverManager().install())
 # 创建 Chrome WebDriver 实例，将 options 作为关键字参数传入
 driver = webdriver.Chrome(service=service, options=chrome_options)
-driver.get("https://fofa.info/")
-search = WebDriverWait(driver, 10).until(
+while levels:
+ driver.get("https://fofa.info/")
+ search = WebDriverWait(driver, 10).until(
     EC.presence_of_element_located((By.CSS_SELECTOR, ".custom-textarea.blurred.indexAutoComplete"))
 )
-search.send_keys(fofa_search)
-search.send_keys(Keys.RETURN)
-html = driver.page_source
-find(html)
+ search.send_keys(fofa_search)
+ search.send_keys(Keys.RETURN)
+ html = driver.page_source
+ find(html)
+ levels-=1
+ time.sleep(3)
 write(ip_list)
 driver.quit()
-
 
