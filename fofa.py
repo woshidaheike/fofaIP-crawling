@@ -1,6 +1,5 @@
 import os
 from traceback import format_exc
-from Demos.BackupSeek_streamheaders import bytes_moved
 from selenium import webdriver
 from selenium.webdriver import Keys
 from webdriver_manager.chrome import ChromeDriverManager
